@@ -212,8 +212,8 @@ public class LoginActivity extends TTBaseActivity {
 
         mNameView = (EditText) findViewById(R.id.name);
         mPasswordView = (EditText) findViewById(R.id.password);
-        //因为服务器默认是本地服务器地址 所以账号默认也是自己的
-        mNameView.setText("101");
+        //便于大家调试，服务器和用户名默认值改成线上他人的
+        mNameView.setText("小赵");
         mPasswordView.setText("不为空就好");
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -238,17 +238,17 @@ public class LoginActivity extends TTBaseActivity {
         sign_switch_login_server_cs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //这个项目需要用户名和密码一样 账号可以有1001-1005
-                mNameView.setText("1005");
-                mPasswordView.setText("1005");
+                //这个项目需要用户名和密码一样 账号可以有1001-1005  47.97.181.98:8080
+                mNameView.setText("小赵");
+                mPasswordView.setText("不为空就好");
                 SystemConfigSp.instance().setStrConfig(SystemConfigSp.SysCfgDimension.LOGINSERVER, sign_switch_login_server_cs.getText().toString().trim());
             }
         });
         sign_switch_login_server_qq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mNameView.setText("小赵");
-                mPasswordView.setText("不为空就好");
+                mNameView.setText("1005");
+                mPasswordView.setText("1005");
                 SystemConfigSp.instance().setStrConfig(SystemConfigSp.SysCfgDimension.LOGINSERVER, sign_switch_login_server_qq.getText().toString().trim());
             }
         });
