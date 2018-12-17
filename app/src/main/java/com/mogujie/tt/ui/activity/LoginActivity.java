@@ -178,24 +178,6 @@ public class LoginActivity extends TTBaseActivity {
         sign_switch_login_server_cs = (TextView)findViewById(R.id.sign_switch_login_server_cs);
         sign_switch_login_server_qq = (TextView)findViewById(R.id.sign_switch_login_server_qq);
         sign_switch_login_server_vs = (TextView)findViewById(R.id.sign_switch_login_server_vs);
-        sign_switch_login_server_cs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SystemConfigSp.instance().setStrConfig(SystemConfigSp.SysCfgDimension.LOGINSERVER, sign_switch_login_server_cs.getText().toString().trim());
-            }
-        });
-        sign_switch_login_server_qq.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SystemConfigSp.instance().setStrConfig(SystemConfigSp.SysCfgDimension.LOGINSERVER, sign_switch_login_server_qq.getText().toString().trim());
-            }
-        });
-        sign_switch_login_server_vs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SystemConfigSp.instance().setStrConfig(SystemConfigSp.SysCfgDimension.LOGINSERVER, sign_switch_login_server_vs.getText().toString().trim());
-            }
-        });
         mSwitchLoginServer.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -230,6 +212,9 @@ public class LoginActivity extends TTBaseActivity {
 
         mNameView = (EditText) findViewById(R.id.name);
         mPasswordView = (EditText) findViewById(R.id.password);
+        //因为服务器默认是本地服务器地址 所以账号默认也是自己的
+        mNameView.setText("101");
+        mPasswordView.setText("不为空就好");
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
@@ -247,6 +232,33 @@ public class LoginActivity extends TTBaseActivity {
             public void onClick(View view) {
                 intputManager.hideSoftInputFromWindow(mPasswordView.getWindowToken(), 0);
                 attemptLogin();
+            }
+        });
+
+        sign_switch_login_server_cs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //这个项目需要用户名和密码一样 账号可以有1001-1005
+                mNameView.setText("1005");
+                mPasswordView.setText("1005");
+                SystemConfigSp.instance().setStrConfig(SystemConfigSp.SysCfgDimension.LOGINSERVER, sign_switch_login_server_cs.getText().toString().trim());
+            }
+        });
+        sign_switch_login_server_qq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mNameView.setText("小赵");
+                mPasswordView.setText("不为空就好");
+                SystemConfigSp.instance().setStrConfig(SystemConfigSp.SysCfgDimension.LOGINSERVER, sign_switch_login_server_qq.getText().toString().trim());
+            }
+        });
+        sign_switch_login_server_vs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Virtual Machines 自己虚拟机服务器地址
+                mNameView.setText("101");
+                mPasswordView.setText("不为空就好");
+                SystemConfigSp.instance().setStrConfig(SystemConfigSp.SysCfgDimension.LOGINSERVER, sign_switch_login_server_vs.getText().toString().trim());
             }
         });
         initAutoLogin();
