@@ -57,7 +57,7 @@ public class LoginActivity extends TTBaseActivity {
     private View loginPage;
     private View splashPage;
     private View mLoginStatusView;
-    private TextView mSwitchLoginServer;
+    private TextView mSwitchLoginServer,sign_switch_login_server_vs,sign_switch_login_server_cs,sign_switch_login_server_qq;
     private InputMethodManager intputManager;
 
 
@@ -162,7 +162,7 @@ public class LoginActivity extends TTBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        intputManager = (InputMethodManager) getSystemService(this.INPUT_METHOD_SERVICE);
+        intputManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
         logger.d("login#onCreate");
 
         SystemConfigSp.instance().init(getApplicationContext());
@@ -175,6 +175,27 @@ public class LoginActivity extends TTBaseActivity {
 
         setContentView(R.layout.tt_activity_login);
         mSwitchLoginServer = (TextView)findViewById(R.id.sign_switch_login_server);
+        sign_switch_login_server_cs = (TextView)findViewById(R.id.sign_switch_login_server_cs);
+        sign_switch_login_server_qq = (TextView)findViewById(R.id.sign_switch_login_server_qq);
+        sign_switch_login_server_vs = (TextView)findViewById(R.id.sign_switch_login_server_vs);
+        sign_switch_login_server_cs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SystemConfigSp.instance().setStrConfig(SystemConfigSp.SysCfgDimension.LOGINSERVER, sign_switch_login_server_cs.getText().toString().trim());
+            }
+        });
+        sign_switch_login_server_qq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SystemConfigSp.instance().setStrConfig(SystemConfigSp.SysCfgDimension.LOGINSERVER, sign_switch_login_server_qq.getText().toString().trim());
+            }
+        });
+        sign_switch_login_server_vs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SystemConfigSp.instance().setStrConfig(SystemConfigSp.SysCfgDimension.LOGINSERVER, sign_switch_login_server_vs.getText().toString().trim());
+            }
+        });
         mSwitchLoginServer.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -275,9 +296,7 @@ public class LoginActivity extends TTBaseActivity {
         if (intent != null) {
             boolean notAutoLogin = intent.getBooleanExtra(IntentConstant.KEY_LOGIN_NOT_AUTO, false);
             logger.d("login#notAutoLogin:%s", notAutoLogin);
-            if (notAutoLogin) {
-                return false;
-            }
+            return !notAutoLogin;
         }
         return true;
     }
