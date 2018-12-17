@@ -254,6 +254,8 @@ public class IMLoginManager extends IMManager {
         IMBaseDefine.ResultType  code = loginRes.getResultCode();
         switch (code){
             case REFUSE_REASON_NONE:{
+                //登录成功，服务器返回的数据格式
+                //{id=null, peerId=15, gender=1, mainName='1005', pinyinName='#', realName='1005', avatar='http://msfs.xiaominfc.com/g0/000/000/1510745671617608_139781395625.jpg', phone='', email='', departmentId=1, status=0, created=1545055405, updated=1545055405, pinyinElement=PinYinElement [pinyin=#1005, firstChars=1005]tokenPinyinList:1,0,0,5,, searchElement=SearchElement [startIndex=-1, endIndex=-1]}
                 IMBaseDefine.UserStatType userStatType = loginRes.getOnlineStatus();
                 IMBaseDefine.UserInfo userInfo =  loginRes.getUserInfo();
                 loginId = userInfo.getUserId();
@@ -283,6 +285,7 @@ public class IMLoginManager extends IMManager {
             triggerEvent(LoginEvent.LOCAL_LOGIN_MSG_SERVICE);
         }else{
             isLocalLogin = true;
+            //登录成功之后 发送这个广播，这登录的界面里面有接收，然后跳转到主界面去
             triggerEvent(LoginEvent.LOGIN_OK);
         }
 

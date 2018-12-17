@@ -397,6 +397,7 @@ public class LoginActivity extends TTBaseActivity {
         switch (event) {
             case LOCAL_LOGIN_SUCCESS:
             case LOGIN_OK:
+                //接收到登录成功的广播
                 onLoginSuccess();
                 break;
             case LOGIN_AUTH_FAILED:
@@ -419,6 +420,7 @@ public class LoginActivity extends TTBaseActivity {
     }
 
     private void onLoginSuccess() {
+        //登录成功跳转到主界面
         logger.i("login#onLoginSuccess");
         loginSuccess = true;
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
