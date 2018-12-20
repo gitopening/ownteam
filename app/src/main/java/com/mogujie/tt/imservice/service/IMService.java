@@ -48,6 +48,7 @@ public class IMService extends Service {
 
     @Override
     public IBinder onBind(Intent arg0) {
+        //当第一次运行程序时，从IMApplication过来后，第三个执行这里
         logger.i("IMService onBind");
         return binder;
     }
@@ -70,6 +71,7 @@ public class IMService extends Service {
 
 	@Override
 	public void onCreate() {
+	    //当第一次运行程序时，从IMApplication过来后，第一个执行这里
 		logger.i("IMService onCreate");
 		super.onCreate();
         EventBus.getDefault().register(this, SysConstant.SERVICE_EVENTBUS_PRIORITY);
@@ -127,6 +129,7 @@ public class IMService extends Service {
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		logger.i("IMService onStartCommand");
         //应用开启初始化 下面这几个怎么释放 todo
+        //当第一次运行程序时，从IMApplication过来后，第二个执行这里
 		Context ctx = getApplicationContext();
         loginSp.init(ctx);
         // 放在这里还有些问题 todo
