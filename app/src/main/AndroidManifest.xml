@@ -64,6 +64,7 @@
             android:screenOrientation="portrait" >
         </activity>
 
+        <!--当前应用中的服务 android:exported="false" 表示此应用不可被其他应用调用-->
         <service
             android:name=".imservice.service.IMService"
             android:exported="false" >
