@@ -16,14 +16,13 @@ import com.mogujie.tt.DB.entity.UserEntity;
 import com.mogujie.tt.R;
 import com.mogujie.tt.config.DBConstant;
 import com.mogujie.tt.config.IntentConstant;
-import com.mogujie.tt.config.SysConstant;
-import com.mogujie.tt.utils.IMUIHelper;
 import com.mogujie.tt.imservice.event.UserInfoEvent;
 import com.mogujie.tt.imservice.manager.IMLoginManager;
 import com.mogujie.tt.imservice.service.IMService;
-import com.mogujie.tt.ui.activity.DetailPortraitActivity;
 import com.mogujie.tt.imservice.support.IMServiceConnector;
+import com.mogujie.tt.ui.activity.DetailPortraitActivity;
 import com.mogujie.tt.ui.widget.IMBaseImageView;
+import com.mogujie.tt.utils.IMUIHelper;
 
 import java.util.ArrayList;
 
@@ -176,6 +175,13 @@ public class UserInfoFragment extends MainFragment {
 		logger.d("detail#initDetailProfile");
 		hideProgressBar();
         DepartmentEntity deptEntity = imService.getContactManager().findDepartment(currentUser.getDepartmentId());
+		/**
+		 * 用来插入数据库 更新部门表和已经有的用户表
+		 *  INSERT INTO `teamtalk`.`IMDepart` SET `id`=2,`departName`='部门2',`priority`=0,`parentId`=1,`status`=0,`created`=1,`updated`=1;
+		 INSERT INTO `teamtalk`.`IMDepart` SET `id`=3,`departName`='部门3',`priority`=0,`parentId`=1,`status`=0,`created`=1,`updated`=1;
+		 SELECT * FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA`='teamtalk' AND `TABLE_NAME` IN ('IMUser');
+		 UPDATE `teamtalk`.`IMUser` SET `nick`='亲的真名1' WHERE `id`=4;
+		 */
 		setTextViewContent(R.id.department,deptEntity.getDepartName());
 		setTextViewContent(R.id.telno, currentUser.getPhone());
 		setTextViewContent(R.id.email, currentUser.getEmail());

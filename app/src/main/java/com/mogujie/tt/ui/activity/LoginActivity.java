@@ -298,6 +298,9 @@ public class LoginActivity extends TTBaseActivity {
                 return;
             }
 
+            /**
+             * 在登录的启动界面的初始化 渐变动画
+             */
             splashPage.startAnimation(splashAnimation);
         }
     }
