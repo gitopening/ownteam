@@ -143,8 +143,11 @@ public class ContactAdapter extends BaseAdapter implements
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Object object =  getItem(position);
         if(object instanceof UserEntity){
+//            UserEntity{id=1, peerId=1, gender=1, mainName='亲的真名', pinyinName='', realName='亲', avatar='', phone='18812345678', email='email@email.com', departmentId=1, status=0, created=1545226877, updated=1545226877, pinyinElement=PinYinElement [pinyin=QINGDEZHENMING, firstChars=QDZM]tokenPinyinList:QING,DE,ZHEN,MING,, searchElement=SearchElement [startIndex=-1, endIndex=-1]}
+//            UserEntity{id=9, peerId=9, gender=1, mainName='1002', pinyinName='#', realName='1002', avatar='http://msfs.xiaominfc.com/g0/000/000/1510745671617608_139781395625.jpg', phone='', email='', departmentId=1, status=0, created=1545229118, updated=1545229118, pinyinElement=PinYinElement [pinyin=#1002, firstChars=1002]tokenPinyinList:1,0,0,2,, searchElement=SearchElement [startIndex=-1, endIndex=-1]}
             UserEntity userEntity = (UserEntity) object;
             IMUIHelper.openUserProfileActivity(ctx, userEntity.getPeerId());
+
         }else if(object instanceof GroupEntity){
             GroupEntity groupEntity = (GroupEntity) object;
             IMUIHelper.openChatActivity(ctx,groupEntity.getSessionKey());

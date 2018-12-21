@@ -153,6 +153,36 @@
                     android:paddingTop="5dp"
                     android:paddingBottom="5dp"
                     />
+                <TextView
+                    android:id="@+id/sign_switch_login_server_mac"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/str_sign_switch_login_server_mac"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    />
+                <TextView
+                    android:id="@+id/sign_switch_login_server_mac28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/str_sign_switch_login_server_mac28"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    />
+                <TextView
+                    android:id="@+id/sign_switch_login_server_mac30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/str_sign_switch_login_server_mac30"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    />
             </LinearLayout>
         </LinearLayout>
     </FrameLayout>

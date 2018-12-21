@@ -57,7 +57,10 @@ public class LoginActivity extends TTBaseActivity {
     private View loginPage;
     private View splashPage;
     private View mLoginStatusView;
-    private TextView mSwitchLoginServer,sign_switch_login_server_vs,sign_switch_login_server_cs,sign_switch_login_server_qq;
+    private TextView mSwitchLoginServer, sign_switch_login_server_vs,
+            sign_switch_login_server_cs, sign_switch_login_server_qq,
+            sign_switch_login_server_mac, sign_switch_login_server_mac28,
+            sign_switch_login_server_mac30;
     private InputMethodManager intputManager;
 
 
@@ -174,28 +177,30 @@ public class LoginActivity extends TTBaseActivity {
         EventBus.getDefault().register(this);
 
         setContentView(R.layout.tt_activity_login);
-        mSwitchLoginServer = (TextView)findViewById(R.id.sign_switch_login_server);
-        sign_switch_login_server_cs = (TextView)findViewById(R.id.sign_switch_login_server_cs);
-        sign_switch_login_server_qq = (TextView)findViewById(R.id.sign_switch_login_server_qq);
-        sign_switch_login_server_vs = (TextView)findViewById(R.id.sign_switch_login_server_vs);
-        mSwitchLoginServer.setOnClickListener(new View.OnClickListener(){
+        mSwitchLoginServer = (TextView) findViewById(R.id.sign_switch_login_server);
+        sign_switch_login_server_cs = (TextView) findViewById(R.id.sign_switch_login_server_cs);
+        sign_switch_login_server_qq = (TextView) findViewById(R.id.sign_switch_login_server_qq);
+        sign_switch_login_server_vs = (TextView) findViewById(R.id.sign_switch_login_server_vs);
+        sign_switch_login_server_mac = (TextView) findViewById(R.id.sign_switch_login_server_mac);
+        sign_switch_login_server_mac28 = (TextView) findViewById(R.id.sign_switch_login_server_mac28);
+        sign_switch_login_server_mac30 = (TextView) findViewById(R.id.sign_switch_login_server_mac30);
+        mSwitchLoginServer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(LoginActivity.this, android.R.style.Theme_Holo_Light_Dialog));
-                LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View dialog_view = inflater.inflate(R.layout.tt_custom_dialog, null);
-                final EditText editText = (EditText)dialog_view.findViewById(R.id.dialog_edit_content);
+                final EditText editText = (EditText) dialog_view.findViewById(R.id.dialog_edit_content);
                 editText.setText(SystemConfigSp.instance().getStrConfig(SystemConfigSp.SysCfgDimension.LOGINSERVER));
-                TextView textText = (TextView)dialog_view.findViewById(R.id.dialog_title);
+                TextView textText = (TextView) dialog_view.findViewById(R.id.dialog_title);
                 textText.setText(R.string.switch_login_server_title);
                 builder.setView(dialog_view);
                 builder.setPositiveButton(getString(R.string.tt_ok), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        if(!TextUtils.isEmpty(editText.getText().toString().trim()))
-                        {
-                            SystemConfigSp.instance().setStrConfig(SystemConfigSp.SysCfgDimension.LOGINSERVER,editText.getText().toString().trim());
+                        if (!TextUtils.isEmpty(editText.getText().toString().trim())) {
+                            SystemConfigSp.instance().setStrConfig(SystemConfigSp.SysCfgDimension.LOGINSERVER, editText.getText().toString().trim());
                             dialog.dismiss();
                         }
                     }
@@ -259,6 +264,33 @@ public class LoginActivity extends TTBaseActivity {
                 mNameView.setText("101");
                 mPasswordView.setText("不为空就好");
                 SystemConfigSp.instance().setStrConfig(SystemConfigSp.SysCfgDimension.LOGINSERVER, sign_switch_login_server_vs.getText().toString().trim());
+            }
+        });
+        sign_switch_login_server_mac.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Virtual Machines 自己虚拟机服务器地址
+                mNameView.setText("102");
+                mPasswordView.setText("不为空就好");
+                SystemConfigSp.instance().setStrConfig(SystemConfigSp.SysCfgDimension.LOGINSERVER, sign_switch_login_server_mac.getText().toString().trim());
+            }
+        });
+        sign_switch_login_server_mac28.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Virtual Machines 自己虚拟机服务器地址
+                mNameView.setText("102");
+                mPasswordView.setText("不为空就好");
+                SystemConfigSp.instance().setStrConfig(SystemConfigSp.SysCfgDimension.LOGINSERVER, sign_switch_login_server_mac28.getText().toString().trim());
+            }
+        });
+        sign_switch_login_server_mac30.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Virtual Machines 自己虚拟机服务器地址
+                mNameView.setText("102");
+                mPasswordView.setText("不为空就好");
+                SystemConfigSp.instance().setStrConfig(SystemConfigSp.SysCfgDimension.LOGINSERVER, sign_switch_login_server_mac30.getText().toString().trim());
             }
         });
         initAutoLogin();
