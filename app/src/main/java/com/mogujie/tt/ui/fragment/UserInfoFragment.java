@@ -182,7 +182,12 @@ public class UserInfoFragment extends MainFragment {
 		 SELECT * FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA`='teamtalk' AND `TABLE_NAME` IN ('IMUser');
 		 UPDATE `teamtalk`.`IMUser` SET `nick`='亲的真名1' WHERE `id`=4;
 		 */
-		setTextViewContent(R.id.department,deptEntity.getDepartName());
+
+		if(null != deptEntity){
+			//如果拿到部门信息不为空，则进行设置。要不然会出异常。程序会闪退崩溃
+			setTextViewContent(R.id.department,deptEntity.getDepartName());
+		}
+
 		setTextViewContent(R.id.telno, currentUser.getPhone());
 		setTextViewContent(R.id.email, currentUser.getEmail());
 
