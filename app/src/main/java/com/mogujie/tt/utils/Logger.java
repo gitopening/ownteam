@@ -49,8 +49,8 @@ public class Logger {
 			if (st.getClassName().equals(this.getClass().getName())) {
 				continue;
 			}
-
-			return "[" + st.getFileName() + ":" + st.getLineNumber() + "]";
+			//添加上调用时的方法名
+			return "[" + st.getFileName() + ":" + st.getLineNumber()+ ":" + st.getMethodName() + "]";
 		}
 
 		return null;
