@@ -35,7 +35,7 @@
     <string name="switch_login_server">切换登陆服务器</string>
     <string name="switch_login_server_title">输入登陆服务器地址</string>
     <string name="str_sign_switch_login_server_cs">http://47.97.181.98:8080/msg_server</string>
-    <string name="str_sign_switch_login_server_qq">http://chat.xiaominfc.com/msg_server</string>
+    <string name="str_sign_switch_login_server_qq">http://im.xiaominfc.com:8080/msg_server</string>
     <string name="str_sign_switch_login_server_vs">http://10.5.45.63:8080/msg_server</string>
     <string name="str_sign_switch_login_server_mac">http://192.168.0.29:8080/msg_server</string>
     <string name="str_sign_switch_login_server_mac28">http://192.168.0.28:8080/msg_server</string>
