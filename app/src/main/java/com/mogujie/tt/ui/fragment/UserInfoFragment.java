@@ -118,7 +118,7 @@ public class UserInfoFragment extends MainFragment {
 	protected void initHandler() {
 	}
 
-    public void onEventMainThread(UserInfoEvent event){
+	public void onEventMainThread(UserInfoEvent event){
         switch (event){
             case USER_INFO_UPDATE:
                 UserEntity entity  = imService.getContactManager().findContact(currentUserId);

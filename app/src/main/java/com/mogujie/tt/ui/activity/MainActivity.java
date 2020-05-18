@@ -40,7 +40,7 @@ public class MainActivity extends FragmentActivity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		logger.d("MainActivity#savedInstanceState:%s", savedInstanceState);
+        logger.d("MainActivity#savedInstanceState:%s", savedInstanceState);
 		//todo eric when crash, this will be called, why?
 		if (savedInstanceState != null) {
 			logger.w("MainActivity#crashed and restarted, just exit");

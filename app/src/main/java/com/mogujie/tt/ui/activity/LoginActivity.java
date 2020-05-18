@@ -47,6 +47,16 @@ import de.greenrobot.event.EventBus;
  * false:1. 不能直接登陆，跳转到登陆页面
  * 2. 请求消息服务器地址，链接，验证，触发loginSuccess
  * 3. 保存登陆状态
+ *
+ *
+ *
+ * D/MoGuLogger: 2019-01-05 22:33:44:373 - [LoginActivity.java:169] - 1 - login#onCreate
+I/MoGuLogger: 2019-01-05 22:33:44:505 - [LoginActivity.java:300] - 1 - login#initAutoLogin
+D/MoGuLogger: 2019-01-05 22:33:44:508 - [LoginActivity.java:345] - 1 - login#notAutoLogin:false
+D/MoGuLogger: 2019-01-05 22:33:44:771 - [IMSocketManager.java:51] - 1 - login#creating IMSocketManager
+D/MoGuLogger: 2019-01-05 22:33:44:780 - [IMLoginManager.java:35] - 1 - login#creating IMLoginManager
+D/MoGuLogger: 2019-01-05 22:33:45:017 - [LoginActivity.java:78] - 1 - login#onIMServiceConnected
+I/MoGuLogger: 2019-01-05 22:33:45:019 - [LoginActivity.java:129] - 1 - login#handleNoLoginIdentity
  */
 public class LoginActivity extends TTBaseActivity {
 
@@ -253,8 +263,8 @@ public class LoginActivity extends TTBaseActivity {
         sign_switch_login_server_qq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mNameView.setText("1005");
-                mPasswordView.setText("1005");
+                mNameView.setText("test");
+                mPasswordView.setText("123456");
                 SystemConfigSp.instance().setStrConfig(SystemConfigSp.SysCfgDimension.LOGINSERVER, sign_switch_login_server_qq.getText().toString().trim());
             }
         });
@@ -295,6 +305,7 @@ public class LoginActivity extends TTBaseActivity {
             }
         });
         initAutoLogin();
+        logger.i("login#onCreate#over");
     }
 
     private void initAutoLogin() {
@@ -358,6 +369,7 @@ public class LoginActivity extends TTBaseActivity {
         EventBus.getDefault().unregister(this);
         splashPage = null;
         loginPage = null;
+        logger.i("login#onDestroy");
     }
 
 

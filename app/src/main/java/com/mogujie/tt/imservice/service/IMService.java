@@ -56,9 +56,9 @@ public class IMService extends Service {
 	//所有的管理类
     private IMSocketManager socketMgr = IMSocketManager.instance();
 	private IMLoginManager loginMgr = IMLoginManager.instance();
-	private IMContactManager contactMgr = IMContactManager.instance();
-	private IMGroupManager groupMgr = IMGroupManager.instance();
-	private IMMessageManager messageMgr = IMMessageManager.instance();
+    private IMContactManager contactMgr = IMContactManager.instance();
+    private IMGroupManager groupMgr = IMGroupManager.instance();
+    private IMMessageManager messageMgr = IMMessageManager.instance();
 	private IMSessionManager sessionMgr = IMSessionManager.instance();
 	private IMReconnectManager reconnectMgr = IMReconnectManager.instance();
 	private IMUnreadMsgManager unReadMsgMgr = IMUnreadMsgManager.instance();

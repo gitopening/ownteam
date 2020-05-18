@@ -19,4 +19,8 @@ public class UrlConstant {
 //    public final static String ACCESS_MSG_ADDRESS = "http://10.5.45.63:8080/msg_server";
 //    public final static String ACCESS_MSG_ADDRESS = "http://chat.xiaominfc.com/msg_server"; //用户名test 密码 test  用户名1005密码1005
 
+
+    /**
+     * { "backupIP" : "192.168.0.30", "code" : 0, "discovery" : "http://192.168.0.30/api/discovery", "msfsBackup" : "http://192.168.0.30:8700/", "msfsPrior" : "http://192.168.0.30:8700/", "msg" : "", "port" : "8000", "priorIP" : "192.168.0.30" }
+     */
 }
