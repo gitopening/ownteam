@@ -198,6 +198,7 @@ public class LoginActivity extends TTBaseActivity {
                 builder.setPositiveButton(getString(R.string.tt_ok), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        //希望能实现两行设置，第一行只需要更改IP 由第二行的值做参数修改
 
                         if (!TextUtils.isEmpty(editText.getText().toString().trim())) {
                             SystemConfigSp.instance().setStrConfig(SystemConfigSp.SysCfgDimension.LOGINSERVER, editText.getText().toString().trim());
