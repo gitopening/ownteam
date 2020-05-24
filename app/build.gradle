@@ -8,7 +8,7 @@ android {
     compileSdkVersion 28
 
     defaultConfig {
-        applicationId "com.mogujie.tt"
+        applicationId 'com.weblab.adt.weblab.tt'
         useLibrary'org.apache.http.legacy'
         minSdkVersion 15
         targetSdkVersion 28
