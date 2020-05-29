@@ -176,7 +176,17 @@ public class IMSocketManager extends IMManager {
         client.get(SystemConfigSp.instance().getStrConfig(SystemConfigSp.SysCfgDimension.LOGINSERVER), new BaseJsonHttpResponseHandler(){
             @Override
             public void onSuccess(int i, Header[] headers, String s, Object o) {
-                logger.d("socket#req msgAddress onSuccess, response:%s", s);
+                logger.d("socket#req msgAddress onSuccess,返回的服务器信息 response:%s", s);
+//                "backupIP" : "192.168.31.244",
+//                        "code" : 0,
+//                        "discovery" : "http://192.168.31.244/api/discovery",
+//                        "msfsBackup" : "http://192.168.31.244:8700/",
+//                        "msfsPrior" : "http://192.168.31.244:8700/",
+//                        "msg" : "",
+//                        "port" : "8000",
+//                        "priorIP" : "192.168.31.244"
+//            }
+
                 MsgServerAddrsEntity msgServer = (MsgServerAddrsEntity) o;
                 if(msgServer == null){
                     triggerEvent(SocketEvent.REQ_MSG_SERVER_ADDRS_FAILED);
