@@ -78,6 +78,9 @@ public class IMService extends Service {
 		// make the service foreground, so stop "360 yi jian qingli"(a clean
 		// tool) to stop our app
 		// todo eric study wechat's mechanism, use a better solution
+        //Android应用保活实践
+        // 操作一：启动前台服务startForegroundService提高系统优先级。启动前台服务
+        //同时顶部状态栏会添加一个图标
 		startForeground((int) System.currentTimeMillis(), new Notification());
 	}
 
