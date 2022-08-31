@@ -11,7 +11,6 @@ android {
         applicationId 'com.weblab.adt.weblab.tt'
         useLibrary'org.apache.http.legacy'
         minSdkVersion 15
-        targetSdkVersion 28
         versionCode 5
         versionName "2.0.1"
 
