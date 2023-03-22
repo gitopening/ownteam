@@ -290,7 +290,7 @@ public class LoginActivity extends TTBaseActivity {
             @Override
             public void onClick(View view) {
                 //Virtual Machines 自己虚拟机服务器地址
-                mNameView.setText("102");
+                mNameView.setText("101");
                 mPasswordView.setText("不为空就好");
                 SystemConfigSp.instance().setStrConfig(SystemConfigSp.SysCfgDimension.LOGINSERVER, sign_switch_login_server_mac28.getText().toString().trim());
             }

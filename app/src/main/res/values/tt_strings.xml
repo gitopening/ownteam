@@ -38,7 +38,7 @@
     <string name="str_sign_switch_login_server_qq">http://im.xiaominfc.com:8080/msg_server</string>
     <string name="str_sign_switch_login_server_vs">http://10.5.45.63:8080/msg_server</string>
     <string name="str_sign_switch_login_server_mac">http://192.168.0.29:8080/msg_server</string>
-    <string name="str_sign_switch_login_server_mac28">http://192.168.0.28:8080/msg_server</string>
+    <string name="str_sign_switch_login_server_mac28">http://192.168.31.244:8080/msg_server</string>
     <string name="str_sign_switch_login_server_mac30">http://192.168.0.30:8080/msg_server</string>
 
 

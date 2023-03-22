@@ -103,6 +103,7 @@ public class InternalAdapter extends BaseAdapter {
             @Override
             protected Object parseResponse(String s, boolean b) throws Throwable {
                 /*子类需要提供实现，将请求结果解析成需要的类型 异常怎么处理*/
+                logger.d("socket#req msgAddress onSuccess,返回的服务器信息 response:%s", s);
                 SystemConfigSp.instance().setStrConfig(SystemConfigSp.SysCfgDimension.DISCOVERYDATA, s);
                 convertJson2Data();
                 return null;

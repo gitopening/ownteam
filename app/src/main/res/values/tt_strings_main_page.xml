@@ -1,8 +1,11 @@
 <resources>
 
-    <string name="main_chat">聊天</string>
-    <string name="main_contact">通讯录</string>
-    <string name="main_innernet">发现</string>
+    <string name="main_chat1">聊天</string>
+    <string name="main_chat">唠唠</string>
+    <string name="main_contact2">通讯录</string>
+    <string name="main_contact">机缘</string>
+    <string name="main_innernet2">发现</string>
+    <string name="main_innernet">日常</string>
     <string name="main_me_tab">我的</string>
     <string name="page_me">我</string>
     <string name="page_setting">设置</string>
